@@ -1,12 +1,12 @@
-## 🗺️ Topologi Jaringan & Addressing
+## Topologi Jaringan & Addressing
 
-### 🖧 Topologi Tugas Modul
+### Topologi Tugas Modul
 Berikut adalah arsitektur topologi jaringan Enterprise HQ–Branch yang digunakan dalam tugas ini:
 
 <img width="1228" height="738" alt="image" src="https://github.com/user-attachments/assets/48448903-2ac0-4f07-9da3-482395678069" />
 
 
-## 🛠️ Panduan Tugas Modul (1 - 10)
+## Panduan Tugas Modul (1 - 10)
 
 ### Tugas Modul 1: Konfigurasi Cisco Switch Jakarta
 
@@ -34,7 +34,7 @@ Switch(config-if-range)# switchport mode trunk
 Switch(config-if-range)# switchport trunk allowed vlan 10,20,60
 ```
 
-#### 📁 Bukti Verifikasi:
+#### Bukti Verifikasi:
 1. **Show VLAN Brief & Interfaces Trunk:**
 <img width="1112" height="622" alt="Switch JKT VLAN Brief, Interface Trunk" src="https://github.com/user-attachments/assets/114d41fa-d4d9-4953-8060-48401616ca71" />
 
@@ -73,7 +73,7 @@ interface Gi0/0
 ip route 0.0.0.0 0.0.0.0 10.10.100.1
 ```
 
-#### 📁 Bukti Verifikasi:
+#### Bukti Verifikasi:
 1. **Show IP Interface Brief, VRRP Brief, dan Ping:**
   <img width="1118" height="622" alt="Router JKT Interface trunk, vrrp, ping" src="https://github.com/user-attachments/assets/5842f8e5-8c5a-4579-88c7-210230b4b504" />
 
@@ -112,7 +112,7 @@ ip route 0.0.0.0 0.0.0.0 10.10.100.1
 /ip route add dst-address=0.0.0.0/0 gateway=10.10.101.1
 ```
 
-#### 📁 Bukti Verifikasi:
+#### Bukti Verifikasi:
 1. **IP Address Print & VRRP Status:**
 <img width="930" height="792" alt="Mikrotik JKT Address vrrp" src="https://github.com/user-attachments/assets/9a8c51d1-3ef9-4c72-8781-e819f7524c4f" />
 
@@ -129,7 +129,7 @@ ip route 0.0.0.0 0.0.0.0 10.10.100.1
 
 ### Tugas Modul 4: Konfigurasi Ubuntu Server Jakarta
 
-💡 **Tips Penting Troubleshooting**: Hubungkan internet via Cloud Network Management di awal pengerjaan untuk mengunduh packages server, lakukan instalasi, barulah pindah ke topologi internal (VLAN 60) dengan IP Static.
+**Tips Penting Troubleshooting**: Hubungkan internet via Cloud Network Management di awal pengerjaan untuk mengunduh packages server, lakukan instalasi, barulah pindah ke topologi internal (VLAN 60) dengan IP Static.
 
 #### Konfigurasi File `/etc/dhcp/dhcpd.conf`:
 ```text
@@ -163,7 +163,7 @@ subnet 192.168.60.0 netmask 255.255.255.0 {
 }
 ```
 
-#### 📁 Bukti Verifikasi:
+#### Bukti Verifikasi:
 1. **Output Perintah `ip a` & `ip route` & Ping :**
  <img width="930" height="790" alt="UBUNTU JKT IP A, IP route, ping" src="https://github.com/user-attachments/assets/5a674d6e-138b-4fec-8569-a3d2e8c0bbd1" />
 
@@ -203,7 +203,7 @@ config router static
 end
 ```
 
-#### 📁 Bukti Verifikasi:
+#### Bukti Verifikasi:
 1. **Physical Interfaces Verification:**
 <img width="1042" height="1008" alt="Forti JKT system interface physical" src="https://github.com/user-attachments/assets/a540f300-6ad3-48dd-880e-d973a0f1f14a" />
 
@@ -229,7 +229,7 @@ end
 /ip firewall nat add chain=srcnat action=masquerade out-interface=ether1
 ```
 
-#### 📁 Bukti Verifikasi:
+#### Bukti Verifikasi:
 1. **IP Table Print:**
    <img width="1042" height="1008" alt="Mikrotik ISP print addr, route firewall nat, ping 8 8 8 8, 10 0 12 2" src="https://github.com/user-attachments/assets/65c198d5-8a93-4f06-8a25-726682d4ff93" />
 
@@ -267,7 +267,7 @@ SWITCH-SURABAYA(config-vlan)# name operations
 /ip route add dst-address=0.0.0.0/0 gateway=10.10.200.1
 ```
 
-#### 📁 Bukti Verifikasi:
+#### Bukti Verifikasi:
 1. **VLAN Table SBY:**
  <img width="1042" height="1008" alt="switch SBY vlan brief" src="https://github.com/user-attachments/assets/c0b96c53-6b33-48be-9182-0a6b085a7c6b" />
 
@@ -284,7 +284,7 @@ SWITCH-SURABAYA(config-vlan)# name operations
 
 ### Tugas Modul 8: Konfigurasi FortiGate Surabaya
 
-#### 📁 Bukti Verifikasi Jaringan & Routing Table:
+#### Bukti Verifikasi Jaringan & Routing Table:
 1. **Routing Table Lengkap (`get router info routing-table all`):**
 <img width="1042" height="1008" alt="Forti SBY routing table,  firewall policy pt 1" src="https://github.com/user-attachments/assets/d8b837e4-5521-4217-bedb-30240dbaf17b" />
 <img width="1042" height="1008" alt="Forti SBY firewall policy pt 2" src="https://github.com/user-attachments/assets/9141803b-7b1e-4f6e-8a40-5c8f7967de54" />
@@ -317,7 +317,7 @@ Implementasi ini menjembatani FortiGate Jakarta dan Surabaya menggunakan terowon
 <img width="1042" height="1008" alt="VLAN10 ping 192 168 30 1" src="https://github.com/user-attachments/assets/cd85e9b8-354d-4ea6-a95e-69669b2b671a" />
   ```
 
-#### 📝 Analisis Singkat Jalur Trafik Surabaya ke Web Server Jakarta:
+#### Analisis Singkat Jalur Trafik Surabaya ke Web Server Jakarta:
 1. Paket diinisiasi oleh Client Surabaya (`192.168.30.X`/`192.168.40.X`) menuju default gateway MikroTik Surabaya (`10.10.200.2`).
 2. MikroTik Surabaya melempar paket ke internal interface FortiGate Surabaya (`10.10.200.1`).
 3. FortiGate Surabaya membaca tabel routing OSPF. Paket diarahkan masuk ke interface virtual tunnel **GRE-SBY-JKT** dengan enkapsulasi IP luar WAN menuju FortiGate Jakarta.
